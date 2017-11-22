@@ -1,0 +1,34 @@
+.instructions {
+  color: #BD7BE0;
+}
+
+#medication {
+  margin-top: 40px;
+  width: 400px;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-sizing: border-box;
+  border: 0.5px solid #ddd;
+  border-radius: 2px;
+  outline: none;
+  background-color: white;
+}
+
+.medication-search {
+  position: relative;
+  width: 0;
+  height: 0;
+  top: 5px;
+  left: -38px;
+  color: #555;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.medication-search>.material-icons {
+  font-size: 18px;
+}

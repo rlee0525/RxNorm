@@ -1,13 +1,9 @@
 import { merge, extend } from 'lodash';
 
-import {
-  RECEIVE_ERRORS,
-  CLEAR_ERRORS
-} from './actions';
+import { RECEIVE_ERRORS, CLEAR_ERRORS} from './actions';
 
 const ErrorsReducer = (state = [], action) => {
   Object.freeze(state);
-
   switch (action.type) {
     case RECEIVE_ERRORS:
       return action.errors;

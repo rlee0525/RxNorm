@@ -1,6 +1,7 @@
 import React from 'react';
 
 import AuthForm from '../auth';
+import Search from '../search';
 
 class Home extends React.Component {
   render() {
@@ -12,6 +13,7 @@ class Home extends React.Component {
           </div>
         </div>
         <AuthForm />
+        <Search />
       </div>
     );
   }

@@ -26,15 +26,10 @@ class AuthForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    if (this.state.loginPage) {
-      this.props.login(user).then(() => this.setState({ loadingPage: true }));
-    } else {
-      this.props.signup(user).then(() => this.setState({ loadingPage: true }));
-    }
+    this.props.login(user);
   }
 
   demoLogin() {
-    this.setState({ loginPage: true });
     const that = this;
     let counter = 1;
     let passwordCounter = 1;
