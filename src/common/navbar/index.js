@@ -1,8 +1,10 @@
 import React from 'react';
 import Modal from 'react-modal';
 import autoBind from 'auto-bind';
+import { connect } from 'react-redux';
 
 import AuthForm from 'modules/auth';
+import { logout } from 'modules/auth/actions';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -11,10 +13,15 @@ class Navbar extends React.Component {
     this.state = {
       modalOpen: false,
       username: "",
-      password: ""
+      password: "",
+      loggedIn: this.props.loggedIn
     };
 
     autoBind(this);
+  }
+
+  componentDidMount() {
+    console.log(this.props.currentUser);
   }
 
   openModal() {
@@ -29,6 +36,49 @@ class Navbar extends React.Component {
     this.closeModal();
   }
 
+  renderUser() {
+    if (!this.props.loggedIn) {
+      return (
+        <div className="navbar-right">
+          <div className="login-button-container">
+            <button className="login-button" id="button-start"
+              onClick={this.openModal}>
+              Get Started
+              </button>
+          </div>
+          <Modal
+            className="auth-modal"
+            isOpen={this.state.modalOpen}
+            onRequestClose={this.closeModal}
+            contentLabel="auth-modal">
+            <div className="login-intro-text">
+              Welcome
+              </div>
+            <AuthForm closeModal={this.closeModal} />
+          </Modal>
+
+          <a href='https://github.com/rlee0525/RxNorm' target="_blank">
+            <i className="fa fa-github" aria-hidden="true"></i>
+          </a>
+        </div>
+      );
+    } else {
+      return (
+        <div className="navbar-right">
+          <div className="login-button-container">
+            <button className="login-button" id="button-start">
+              {this.props.currentUser.username}
+            </button>
+          </div>
+
+          <button onClick={this.props.logout}>
+            <i className="fa fa-sign-out" aria-hidden="true"></i>
+          </button>
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="navbar-container">
@@ -39,32 +89,24 @@ class Navbar extends React.Component {
           />
           <h1 className="app-name">RxNorm</h1>
         </div>
-
-        <div className="navbar-right">
-          <div className="login-button-container">
-            <button className="login-button" id="button-start"
-              onClick={this.openModal}>
-              Get Started
-            </button>
-          </div>
-          <Modal
-            className="auth-modal"
-            isOpen={this.state.modalOpen}
-            onRequestClose={this.closeModal}
-            contentLabel="auth-modal">
-            <div className="login-intro-text">
-              Welcome
-            </div>
-            <AuthForm />
-          </Modal>
-
-          <a href='https://github.com/rlee0525/RxNorm' target="_blank">
-            <i className="fa fa-github" aria-hidden="true"></i>
-          </a>
-        </div>
+        
+        {this.renderUser()}
       </div>
     );
   }
 }
 
-export default Navbar;
+
+const mapStateToProps = ({ session }) => ({
+  currentUser: session.currentUser,
+  loggedIn: Boolean(session.currentUser)
+});
+
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logout())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Navbar);

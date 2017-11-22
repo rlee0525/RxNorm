@@ -32,7 +32,7 @@
       margin-right: 35px;
       
       .login-button {
-        padding-top: 6px;
+        padding-top: 5px;
         font-family: $sans;
         color: $light-blue;
         font-size: 1.2em;
@@ -43,6 +43,11 @@
       color: $light-black;
       font-size: 30px;
       padding-top: 4px;
+    }
+
+    .fa-sign-out {
+      color: $light-black;
+      font-size: 26px;
     }
   }
 }

@@ -25,7 +25,7 @@ class AuthForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.login(user);
+    this.props.login(user).then(() => this.props.closeModal());
   }
 
   demoLogin() {
@@ -33,7 +33,7 @@ class AuthForm extends React.Component {
     let counter = 1;
     let passwordCounter = 1;
 
-    const username = "WelcomeGuest";
+    const username = "Raymond";
     const password = "password";
     const usernameLoop = username.length;
     const passwordLoop = password.length;
@@ -51,7 +51,7 @@ class AuthForm extends React.Component {
         return that.props.login({
           username: that.state.username,
           password: that.state.password
-        }).then(() => that.setState({ loadingPage: true }));
+        }).then(() => that.props.closeModal());
       }
 
       setTimeout(() => {
