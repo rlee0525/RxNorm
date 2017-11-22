@@ -11,19 +11,12 @@ class Navbar extends React.Component {
     super(props);
 
     this.state = {
-      modalOpen: false,
-      username: "",
-      password: "",
-      loggedIn: this.props.loggedIn
+      modalOpen: false
     };
 
     autoBind(this);
   }
-
-  componentDidMount() {
-    console.log(this.props.currentUser);
-  }
-
+  
   openModal() {
     this.setState({ modalOpen: true });
   }
@@ -37,13 +30,27 @@ class Navbar extends React.Component {
   }
 
   renderUser() {
-    if (!this.props.loggedIn) {
+    if (this.props.loggedIn) {
+      return (
+        <div className="navbar-right">
+          <div className="login-button-container">
+            <button className="login-button" id="button-start">
+              {this.props.currentUser.username}
+            </button>
+          </div>
+
+          <button onClick={this.props.logout}>
+            <i className="fa fa-sign-out" aria-hidden="true"></i>
+          </button>
+        </div>
+      );
+    } else {
       return (
         <div className="navbar-right">
           <div className="login-button-container">
             <button className="login-button" id="button-start"
               onClick={this.openModal}>
-              Get Started
+              Login
               </button>
           </div>
           <Modal
@@ -60,20 +67,6 @@ class Navbar extends React.Component {
           <a href='https://github.com/rlee0525/RxNorm' target="_blank">
             <i className="fa fa-github" aria-hidden="true"></i>
           </a>
-        </div>
-      );
-    } else {
-      return (
-        <div className="navbar-right">
-          <div className="login-button-container">
-            <button className="login-button" id="button-start">
-              {this.props.currentUser.username}
-            </button>
-          </div>
-
-          <button onClick={this.props.logout}>
-            <i className="fa fa-sign-out" aria-hidden="true"></i>
-          </button>
         </div>
       );
     }
@@ -95,7 +88,6 @@ class Navbar extends React.Component {
     );
   }
 }
-
 
 const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser,

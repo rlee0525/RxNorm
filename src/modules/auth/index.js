@@ -2,13 +2,14 @@ import React from 'react';
 import autoBind from 'auto-bind';
 import { connect } from 'react-redux';
 
-import { logout, login, signup } from './actions';
+import { login, signup } from './actions';
 
 class AuthForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      loginPage: true,
       username: "",
       password: ""
     };
