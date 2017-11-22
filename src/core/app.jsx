@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import Navbar from 'common/navbar';
-import Home from 'modules/auth';
+import Home from 'modules/home';
 
 const App = ({ children }) => (
   <div>

@@ -1,0 +1,24 @@
+.home-container {
+  background-color: $light-gray;
+  min-height: calc(100vh - 70px);
+
+  .background-img {
+    display: table-cell;
+    background-image: url('https://canvas-website-media.s3.amazonaws.com/images/varwebappscanvas-webmediaimageshero-filtered-cr.original.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    vertical-align: middle;
+    height: 248px;
+    width: 100vw;
+
+    .description {
+      display: inline-block;
+      width: 100%;
+      color: #fff;
+      font-size: 36px;
+      font-family: $sans;
+      text-align: center;
+      text-shadow: 1px 1px 1px #333;
+    }
+  }
+}
