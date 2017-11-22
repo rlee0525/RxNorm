@@ -3,7 +3,6 @@ import autoBind from 'auto-bind';
 import { connect } from 'react-redux';
 
 import { logout, login, signup } from './actions';
-import { receiveErrors, clearErrors } from 'common/errors/actions';
 
 class AuthForm extends React.Component {
   constructor(props) {
@@ -68,16 +67,6 @@ class AuthForm extends React.Component {
     this.setState({ loginPage });
   }
 
-  renderErrors() {
-    return (
-      <ul className="errors">
-        {this.props.errors.map((err, i) => (
-          <li key={i}>{err}</li>
-        ))}
-      </ul>
-    );
-  }
-
   render() {
     let buttonText = this.state.loginPage ? "LOGIN" : "SIGNUP";
     let questionText = this.state.loginPage ? "Don't have an account?" : "Already have an account?";
@@ -86,9 +75,6 @@ class AuthForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <div className="error-message">
-            {this.props.errors ? this.renderErrors() : ""}
-          </div>
           <div className="login-form">
             <div className="login-input">
               <label>
@@ -126,15 +112,13 @@ class AuthForm extends React.Component {
   }
 }
 
-const mapStateToProps = ({ session, errors }) => ({
-  loggedIn: Boolean(session.currentUser),
-  errors
+const mapStateToProps = ({ session }) => ({
+  loggedIn: Boolean(session.currentUser)
 });
 
 const mapDispatchToProps = dispatch => ({
   signup: user => dispatch(signup(user)),
-  login: user => dispatch(login(user)),
-  clearErrors: () => dispatch(clearErrors()),
+  login: user => dispatch(login(user))
 });
 
 export default connect(

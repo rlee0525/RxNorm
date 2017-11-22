@@ -1,5 +1,3 @@
-import { receiveErrors, clearErrors } from 'common/errors/actions';
-
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
@@ -34,13 +32,11 @@ export const receiveCurrentUser = currentUser => ({
 export const login = user => dispatch => (
   loginUtil(user)
     .then(currentUser => dispatch(receiveCurrentUser(currentUser)))
-    .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const signup = user => dispatch => (
   signupUtil(user)
     .then(currentUser => dispatch(receiveCurrentUser(currentUser)))
-    .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const logout = () => dispatch => (
