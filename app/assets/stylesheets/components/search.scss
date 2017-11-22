@@ -1,9 +1,35 @@
+.search {
+  height: calc(100vh - 318px);
+
+  .search-drug {
+    background-color: $lightest-gray;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    h1 {
+      flex: 2;
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      color: black;
+      font-family: $sans;
+    }
+
+    .search-container {
+      height: 50%;
+    }
+  }
+}
+
+
+// SearchBar
 .instructions {
   color: #BD7BE0;
 }
-
 #medication {
-  margin-top: 40px;
   width: 400px;
   height: 40px;
   padding: 0 10px;
@@ -14,8 +40,8 @@
   border-radius: 2px;
   outline: none;
   background-color: white;
+  text-align: left;
 }
-
 .medication-search {
   position: relative;
   width: 0;
@@ -28,7 +54,6 @@
   outline: none;
   cursor: pointer;
 }
-
 .medication-search>.material-icons {
   font-size: 18px;
 }

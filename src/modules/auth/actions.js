@@ -24,7 +24,7 @@ const logoutUtil = () => (
   })
 );
 
-export const receiveCurrentUser = currentUser => ({
+const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
   currentUser
 });

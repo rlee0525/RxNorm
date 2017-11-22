@@ -1,0 +1,42 @@
+$cubeSize: 3em;
+
+.loader {
+  width: $cubeSize;
+  height: $cubeSize;
+  animation: loaderAnim 1.25s infinite;
+  outline: 1px solid transparent;
+  #large-box {
+    height: $cubeSize;
+    width: $cubeSize;
+    background-color: $orange;
+    outline: 1px solid transparent;
+    position: fixed;
+  }
+  #small-box {
+    height: $cubeSize;
+    width: $cubeSize;
+    background-color: white;
+    position: fixed;
+    z-index: 1;
+    outline: 1px solid transparent;
+    animation: smallBoxAnim 1.25s alternate infinite ease-in-out;
+  }
+}
+
+@keyframes smallBoxAnim {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes loaderAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}

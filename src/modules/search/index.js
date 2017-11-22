@@ -1,7 +1,9 @@
 import React from 'react';
 import autoBind from 'auto-bind';
+import { connect } from 'react-redux';
 
-import { SearchBar, PopularDrugs } from './subcomponents';
+import { SearchBar } from './subcomponents';
+import Popular from 'modules/popular';
 
 class Search extends React.Component {
   constructor(props) {
@@ -17,9 +19,12 @@ class Search extends React.Component {
   render() {
     return (
       <div className="search">
-        <SearchBar {...this.props} />
-        <div>------- or --------</div>
-        <PopularDrugs {...this.props} />
+        <div className="search-drug">
+          <h1>Search Drug</h1>
+          <SearchBar {...this.props} />
+        </div>
+        
+        <Popular {...this.props} />
       </div>
     );
   }
