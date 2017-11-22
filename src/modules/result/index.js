@@ -82,8 +82,9 @@ class Result extends React.Component {
   }
 }
 
-const mapStateToProps = ({ drug }) => ({
-  drug
+const mapStateToProps = ({ drug, session }) => ({
+  drug,
+  loggedIn: Boolean(session.currentUser)
 });
 
 const mapDispatchToProps = dispatch => ({

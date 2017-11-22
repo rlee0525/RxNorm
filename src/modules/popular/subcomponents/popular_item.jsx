@@ -1,6 +1,8 @@
 import React from 'react';
 import autoBind from 'auto-bind';
 
+import { addHistory } from 'modules/search/actions';
+
 class PopularItem extends React.Component {
   constructor(props) {
     super(props);
@@ -10,7 +12,11 @@ class PopularItem extends React.Component {
 
   searchPopularDrug(e) {
     e.preventDefault();
-    let { name, searchDrug } = this.props;
+    let { name, searchDrug, loggedIn } = this.props;
+    if (loggedIn) {
+      let query = { name, count: 1 };
+      addHistory(query);
+    }
     searchDrug(name).then(() => this.props.history.push('result'));
   }
 

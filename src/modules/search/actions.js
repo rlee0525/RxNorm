@@ -1,6 +1,14 @@
 export const RECEIVE_DRUG = "RECEIVE_DRUG";
 export const RECEIVE_RELATED_DRUGS = "RECEIVE_RELATED_DRUGS";
 
+export const addHistory = query => (
+  $.ajax({
+    method: 'POST',
+    url: `api/search_histories`,
+    data: { name: query.name, count: query.count }
+  })
+);
+
 const fetchDrug = query => (
   $.ajax({
     method: 'GET',

@@ -56,8 +56,8 @@ class ResultList extends React.Component {
         name={name}
         rxcui={key.rxcui}
         tty={key.tty}
-        searchRelatedDrugs={this.props.searchRelatedDrugs}
         relatedSearch={this.relatedSearch} 
+        {...this.props}
       />;
     });
   }

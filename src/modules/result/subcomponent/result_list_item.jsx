@@ -1,6 +1,8 @@
 import React from 'react';
 import autoBind from 'auto-bind';
 
+import { addHistory } from 'modules/search/actions';
+
 class ResultListItem extends React.Component {
   constructor(props) {
     super(props);
@@ -23,8 +25,11 @@ class ResultListItem extends React.Component {
   }
 
   searchRelated() {
-    let { rxcui, searchRelatedDrugs, name } = this.props;
-
+    let { rxcui, searchRelatedDrugs, name, loggedIn } = this.props;
+    if (loggedIn) {
+      let query = { name, count: 1 };
+      addHistory(query);
+    }
     searchRelatedDrugs(rxcui).then(
       () => this.props.relatedSearch(name)
     );

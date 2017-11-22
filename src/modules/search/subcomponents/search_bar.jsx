@@ -1,6 +1,8 @@
 import React from 'react';
 import autoBind from 'auto-bind';
 
+import { addHistory } from '../actions';
+
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -20,10 +22,15 @@ class SearchBar extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let { medication } = this.state;
-    this.props.searchDrug(medication).then(
+    let { name, searchDrug, loggedIn, history } = this.props;
+    if (loggedIn) {
+      let query = { name, count: 1 };
+      addHistory(query);
+    }
+    searchDrug(medication).then(
       () => {
-        if (this.props.history.location.pathname !== "/result") {
-          this.props.history.push('result');
+        if (history.location.pathname !== "/result") {
+          history.push('result');
         }
       }
     );

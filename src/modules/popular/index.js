@@ -52,8 +52,9 @@ class Popular extends React.Component {
   }
 }
 
-const mapStateToProps = ({ popular }) => ({
-  popular
+const mapStateToProps = ({ popular, session }) => ({
+  popular,
+  loggedIn: Boolean(session.currentUser)
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -23,7 +23,8 @@ class Search extends React.Component {
 
 const mapStateToProps = ({ drug, session }) => ({
   drug,
-  session
+  session,
+  loggedIn: Boolean(session.currentUser)
 });
 
 const mapDispatchToProps = dispatch => ({
