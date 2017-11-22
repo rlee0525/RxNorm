@@ -1,0 +1,533 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+ */
+/* line 1, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/base/reset.scss */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+/* line 18, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/base/reset.scss */
+ul {
+  list-style: none;
+}
+
+/* line 21, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/base/reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 26, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/base/reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 36, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/base/reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* line 40, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/base/reset.scss */
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 1, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+.auth-modal {
+  position: fixed;
+  top: calc(50% - 190px);
+  left: calc(50% - 170px);
+  width: 340px;
+  height: 380px;
+  border: 1px solid #EFEFEF;
+  background-color: white;
+}
+
+/* line 10, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+.login-intro-text {
+  font-size: 24px;
+  padding-top: 30px;
+  color: #E27A5B;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* line 18, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+.login-form-container {
+  margin: auto;
+  height: 200px;
+}
+
+/* line 22, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+.login-form-box {
+  display: flex;
+  justify-content: center;
+  width: 340px;
+  height: 400px;
+  margin: auto;
+  top: 100px;
+}
+
+/* line 30, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+/* line 35, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+.login-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 40, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+.login-input-field {
+  border: 1px solid #EFEFEF;
+  margin: 4px;
+  padding: 10px;
+  width: 260px;
+  font-family: "Open Sans", sans-serif;
+  color: #616264;
+  font-size: 15px;
+}
+
+/* line 49, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+::-webkit-input-placeholder {
+  color: #bfc0c1;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* line 53, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+/* line 56, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+.login-button-field {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 63, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+#sign-up-log-in-button {
+  background-color: #4EB6E0;
+}
+
+/* line 66, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+.login-button-field button {
+  display: flex;
+  justify-content: center;
+  margin: 2px;
+  padding: 10px;
+  width: 260px;
+  border-radius: 0 !important;
+  background-color: #E27A5B;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* line 77, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+.login-button-field button:hover {
+  opacity: 0.8;
+}
+
+/* line 80, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+.check-own-account {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 7px;
+  padding: 10px 10px 20px 10px;
+  width: 300px;
+  font-size: 12px;
+  color: #616264;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* line 91, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/auth_form.scss */
+#status-toggle {
+  align-self: center;
+  color: #4EB6E0;
+}
+
+/* line 1, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/home.scss */
+.home-container {
+  min-height: calc(100vh - 70px);
+}
+/* line 4, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/home.scss */
+.home-container .background-img {
+  display: table-cell;
+  background-image: url("https://canvas-website-media.s3.amazonaws.com/images/varwebappscanvas-webmediaimageshero-filtered-cr.original.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  vertical-align: middle;
+  height: 248px;
+  width: 100vw;
+}
+/* line 13, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/home.scss */
+.home-container .background-img .description {
+  display: inline-block;
+  width: 100%;
+  color: #fff;
+  font-size: 36px;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  text-shadow: 1px 1px 1px #333;
+}
+
+/* line 3, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/loading.scss */
+.loader {
+  width: 3em;
+  height: 3em;
+  animation: loaderAnim 1.25s infinite;
+  outline: 1px solid transparent;
+}
+/* line 8, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/loading.scss */
+.loader #large-box {
+  height: 3em;
+  width: 3em;
+  background-color: #E27A5B;
+  outline: 1px solid transparent;
+  position: fixed;
+}
+/* line 15, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/loading.scss */
+.loader #small-box {
+  height: 3em;
+  width: 3em;
+  background-color: white;
+  position: fixed;
+  z-index: 1;
+  outline: 1px solid transparent;
+  animation: smallBoxAnim 1.25s alternate infinite ease-in-out;
+}
+
+@keyframes smallBoxAnim {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+@keyframes loaderAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+/* line 1, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/navbar.scss */
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 70px;
+}
+/* line 7, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/navbar.scss */
+.navbar-container .navbar-left {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+}
+/* line 12, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/navbar.scss */
+.navbar-container .navbar-left .logo {
+  width: 40px;
+  height: 40px;
+}
+/* line 16, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/navbar.scss */
+.navbar-container .navbar-left .app-name {
+  color: #616264;
+  font-size: 26px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+/* line 26, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/navbar.scss */
+.navbar-container .navbar-right {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+}
+/* line 31, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/navbar.scss */
+.navbar-container .navbar-right .login-button-container {
+  margin-right: 35px;
+}
+/* line 34, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/navbar.scss */
+.navbar-container .navbar-right .login-button-container .login-button {
+  padding-top: 5px;
+  font-family: "Open Sans", sans-serif;
+  color: #4EB6E0;
+  font-size: 1.2em;
+}
+/* line 42, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/navbar.scss */
+.navbar-container .navbar-right .fa-github {
+  color: #616264;
+  font-size: 30px;
+  padding-top: 4px;
+}
+/* line 48, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/navbar.scss */
+.navbar-container .navbar-right .fa-sign-out {
+  color: #616264;
+  font-size: 26px;
+}
+
+/* line 1, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/popular.scss */
+.search-popular {
+  background-color: white;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+/* line 10, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/popular.scss */
+.search-popular h1 {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+}
+/* line 19, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/popular.scss */
+.search-popular .popular-container {
+  height: 50%;
+}
+/* line 22, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/popular.scss */
+.search-popular .popular-container .popular-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/* line 27, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/popular.scss */
+.search-popular .popular-container .popular-list-container .popular-item-container {
+  flex: 1;
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  padding: 20px 30px;
+  border: 1px solid #E27A5B;
+  margin: 0 20px;
+}
+/* line 36, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/popular.scss */
+.search-popular .popular-container .popular-list-container .popular-item-container:hover {
+  cursor: pointer;
+  background-color: #E27A5B;
+  color: white;
+}
+
+/* line 1, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/results.scss */
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* line 5, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/results.scss */
+.results-container {
+  background-color: #F8F8F8;
+  height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* line 12, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/results.scss */
+.results-container .results {
+  width: 95%;
+  height: 95%;
+  margin-top: 2%;
+  background-color: white;
+}
+/* line 18, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/results.scss */
+.results-container .results .result-list {
+  height: 85%;
+  overflow: scroll;
+  margin-bottom: 20px;
+}
+/* line 23, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/results.scss */
+.results-container .results .result-list .result-title {
+  background-color: white;
+  z-index: 100;
+  width: 85%;
+  position: fixed;
+  left: 8%;
+  align-self: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  color: #616264;
+  padding: 30px 0 50px 0;
+  overflow: scroll;
+  white-space: nowrap;
+}
+/* line 38, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/results.scss */
+.results-container .results .result-list .result-list-items {
+  margin-top: 122px;
+  text-align: center;
+}
+/* line 42, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/results.scss */
+.results-container .results .result-list .result-list-items .result-list-item {
+  border: 1px solid #EFEFEF;
+  padding: 20px;
+  margin: 20px auto;
+  width: 50%;
+  height: 50%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+/* line 54, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/results.scss */
+.results-container .results .result-list .result-list-items .result-list-item .label-container {
+  position: relative;
+}
+/* line 57, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/results.scss */
+.results-container .results .result-list .result-list-items .result-list-item .label-container .branded, .results-container .results .result-list .result-list-items .result-list-item .label-container .generic {
+  background-color: #E27A5B;
+  width: 25px;
+  height: 25px;
+  color: white;
+  position: absolute;
+}
+/* line 64, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/results.scss */
+.results-container .results .result-list .result-list-items .result-list-item .label-container .generic {
+  background-color: #4EB6E0;
+}
+/* line 69, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/results.scss */
+.results-container .results .result-list .result-list-items .result-list-item .result-list-item-name {
+  margin-left: 25px;
+}
+/* line 74, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/results.scss */
+.results-container .results .result-list .result-list-items .result-list-item:hover {
+  background-color: #F8F8F8;
+  cursor: pointer;
+}
+/* line 81, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/results.scss */
+.results-container .results .search-again {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+}
+/* line 90, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/results.scss */
+.results-container .results .search-again span {
+  color: #E27A5B;
+}
+
+/* line 1, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/search.scss */
+.search {
+  height: calc(100vh - 318px);
+}
+/* line 4, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/search.scss */
+.search .search-drug {
+  background-color: #F8F8F8;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+/* line 12, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/search.scss */
+.search .search-drug h1 {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+}
+/* line 21, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/search.scss */
+.search .search-drug .search-container {
+  height: 50%;
+}
+
+/* line 29, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/search.scss */
+.instructions {
+  color: #BD7BE0;
+}
+
+/* line 32, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/search.scss */
+#medication {
+  width: 400px;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 13px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-sizing: border-box;
+  border: 0.5px solid #ddd;
+  border-radius: 2px;
+  outline: none;
+  background-color: white;
+  text-align: left;
+  font-family: "Open Sans", sans-serif;
+  text-transform: capitalize;
+}
+
+/* line 47, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/search.scss */
+::-webkit-input-placeholder {
+  text-transform: none;
+}
+
+/* line 50, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/search.scss */
+.medication-search {
+  position: relative;
+  width: 0;
+  height: 0;
+  top: 5px;
+  left: -38px;
+  color: #555;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* line 62, /Users/raymondlee/Desktop/Raymond/Apps/RxNorm/RxNorm/app/assets/stylesheets/components/search.scss */
+.medication-search > .material-icons {
+  font-size: 18px;
+}
