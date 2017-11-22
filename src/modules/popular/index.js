@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Loading from 'common/loading';
 import { getPopularDrugs } from './actions';
 import { PopularItem } from './subcomponents';
+import { searchDrug } from '../search/actions';
 
 class Popular extends React.Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class Popular extends React.Component {
       <PopularItem 
         key={`popular-${key.name}-${idx}`}
         name={key.name}
+        {...this.props}
       />
     ));
   }
@@ -55,7 +57,8 @@ const mapStateToProps = ({ popular }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getPopularDrugs: () => dispatch(getPopularDrugs())
+  getPopularDrugs: () => dispatch(getPopularDrugs()),
+  searchDrug: medication => dispatch(searchDrug(medication))
 });
 
 export default connect(
