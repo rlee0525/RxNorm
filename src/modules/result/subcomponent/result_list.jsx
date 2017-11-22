@@ -1,4 +1,5 @@
 import React from 'react';
+import autoBind from 'auto-bind';
 
 import { ResultListItem } from './result_list_item';
 
@@ -9,24 +10,50 @@ class ResultList extends React.Component {
     this.state = {
       name: this.props.drug.drugGroup.name
     };
+
+    autoBind(this);
   }
 
   componentWillReceiveProps(newProps) {
-    if (this.props.drug.drugGroup.name !== newProps.drug.drugGroup.name) {
-      this.setState({ name: newProps.drug.drugGroup.name });
+    if (!newProps.drug.relatedGroup) {
+      if (this.props.drug.relatedGroup || this.props.drug.drugGroup.name !== newProps.drug.drugGroup.name) {
+        this.setState({ name: newProps.drug.drugGroup.name });
+      }
     }
   }
 
-  renderItems() {
-    let items = this.props.drug.drugGroup.conceptGroup[1].conceptProperties;
+  relatedSearch(name) {
+    this.setState({ name });
+  }
 
-    return items.map((key, idx) => (
-      <ResultListItem 
-        key={`item-${idx}`} 
-        name={key.synonym} 
-        rxcui={key.rxcui} 
-      />
-    ));
+  renderItems() {
+    let items;
+
+    if (this.props.drug.relatedGroup) {
+      items = this.props.drug.relatedGroup.conceptGroup;
+      items = items[0].conceptProperties.concat(items[1].conceptProperties);
+    } else {
+      items = this.props.drug.drugGroup.conceptGroup;
+
+      if (items.length > 1) {
+        items = items[1].conceptProperties;
+      } else {
+        items = items[0].conceptProperties;
+      }
+    }    
+
+    return items.map((key, idx) => {
+      let name = key.synonym;
+      if (name.length === 0) name = key.name;
+
+      return <ResultListItem 
+        key={key.synonym} 
+        name={name}
+        rxcui={key.rxcui}
+        searchRelatedDrugs={this.props.searchRelatedDrugs}
+        relatedSearch={this.relatedSearch} 
+      />;
+    });
   }
 
   render() {

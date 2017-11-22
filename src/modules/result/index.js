@@ -3,8 +3,8 @@ import autoBind from 'auto-bind';
 import { connect } from 'react-redux';
 
 import { ResultList } from './subcomponent';
-import { searchDrug } from '../search/actions';
 import { SearchBar } from '../search/subcomponents';
+import { searchDrug, searchRelatedDrugs } from '../search/actions';
 
 class Result extends React.Component {
   constructor(props) {
@@ -25,9 +25,10 @@ class Result extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-   if (this.props.drug.drugGroup.name !== newProps.drug.drugGroup.name) {
+    if (newProps.drug.relatedGroup || this.props.drug.relatedGroup ||
+        this.props.drug.drugGroup.name !== newProps.drug.drugGroup.name) {
      this.setState({ searchAgain: false });
-   }
+    }
   }
 
   searchAgain() {
@@ -43,7 +44,13 @@ class Result extends React.Component {
   }
 
   renderNoResult() {
-    let validResult = this.props.drug.drugGroup.conceptGroup;
+    let validResult;
+
+    if (this.props.drug.relatedGroup) {
+      validResult = this.props.drug.relatedGroup.conceptGroup;
+    } else {
+      validResult = this.props.drug.drugGroup.conceptGroup;
+    }
     
     if (!validResult) {
       return (
@@ -78,7 +85,8 @@ const mapStateToProps = ({ drug }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  searchDrug: query => dispatch(searchDrug(query))
+  searchDrug: query => dispatch(searchDrug(query)),
+  searchRelatedDrugs: query => dispatch(searchRelatedDrugs(query))
 });
 
 export default connect(
