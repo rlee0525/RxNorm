@@ -31,7 +31,12 @@ class ResultList extends React.Component {
 
     if (this.props.drug.relatedGroup) {
       items = this.props.drug.relatedGroup.conceptGroup;
-      items = items[0].conceptProperties.concat(items[1].conceptProperties);
+
+      if (items[0].conceptProperties) {
+        items = items[0].conceptProperties.concat(items[1].conceptProperties);
+      } else {
+        items = items[1].conceptProperties;
+      }
     } else {
       items = this.props.drug.drugGroup.conceptGroup;
 
@@ -41,15 +46,16 @@ class ResultList extends React.Component {
         items = items[0].conceptProperties;
       }
     }    
-
+    
     return items.map((key, idx) => {
       let name = key.synonym;
       if (name.length === 0) name = key.name;
 
       return <ResultListItem 
-        key={key.synonym} 
+        key={key.rxcui} 
         name={name}
         rxcui={key.rxcui}
+        tty={key.tty}
         searchRelatedDrugs={this.props.searchRelatedDrugs}
         relatedSearch={this.relatedSearch} 
       />;

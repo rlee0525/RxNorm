@@ -23,12 +23,16 @@
       .result-title {
         background-color: white;
         z-index: 100;
-        width: 90%;
+        width: 85%;
         position: fixed;
+        left: 8%;
+        align-self: center;
         font-family: $sans;
         font-size: 30px;
         color: $light-black;
-        padding: 30px 0 50px 50px;
+        padding: 30px 0 50px 0;
+        overflow: scroll;
+        white-space: nowrap;
       }
 
       .result-list-items {
@@ -46,6 +50,25 @@
           white-space: nowrap;
           font-family: $sans;
           font-size: 18px;
+
+          .label-container {
+            position: relative;
+
+            .branded, .generic {
+              background-color: $orange;
+              width: 25px;
+              height: 25px;
+              color: white;
+              position: absolute;
+            }
+            .generic {
+              background-color: $light-blue;
+            }
+          }
+
+          .result-list-item-name {
+            margin-left: 25px;
+          }
         }
 
         .result-list-item:hover {

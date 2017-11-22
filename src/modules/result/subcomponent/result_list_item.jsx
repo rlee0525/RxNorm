@@ -12,6 +12,16 @@ class ResultListItem extends React.Component {
     autoBind(this);
   }
 
+  renderLabel() {
+    let status = "B";
+    let labelClass = "branded";
+    if (this.props.tty === "SCD") {
+      labelClass = "generic";
+      status = "G";
+    }
+    return <div className={labelClass}>{status}</div>;
+  }
+
   searchRelated() {
     let { rxcui, searchRelatedDrugs, name } = this.props;
 
@@ -23,7 +33,8 @@ class ResultListItem extends React.Component {
   render() {
     return (
       <div className="result-list-item" onClick={this.searchRelated}>
-        {this.state.name}
+        <div className="label-container">{this.renderLabel()}</div>
+        <span className="result-list-item-name">{this.state.name}</span>
       </div>
     );
   }
