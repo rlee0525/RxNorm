@@ -13,7 +13,7 @@ class PopularItem extends React.Component {
   searchPopularDrug(e) {
     e.preventDefault();
     let { name, searchDrug, loggedIn } = this.props;
-    if (loggedIn) {
+    if (loggedIn && name) {
       let query = { name, count: 1 };
       addHistory(query);
     }

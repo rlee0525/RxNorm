@@ -23,7 +23,7 @@ class SearchBar extends React.Component {
     e.preventDefault();
     let { medication } = this.state;
     let { name, searchDrug, loggedIn, history } = this.props;
-    if (loggedIn) {
+    if (loggedIn && name) {
       let query = { name, count: 1 };
       addHistory(query);
     }
