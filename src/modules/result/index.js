@@ -48,8 +48,10 @@ class Result extends React.Component {
 
     if (this.props.drug.relatedGroup) {
       validResult = this.props.drug.relatedGroup.conceptGroup;
-    } else {
+    } else if (this.props.drug.drugGroup) {
       validResult = this.props.drug.drugGroup.conceptGroup;
+    } else {
+      validResult = this.props.drug.drugGroup;
     }
     
     if (!validResult) {
