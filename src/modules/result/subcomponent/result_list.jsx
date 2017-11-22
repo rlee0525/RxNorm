@@ -11,6 +11,12 @@ class ResultList extends React.Component {
     };
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.drug.drugGroup.name !== newProps.drug.drugGroup.name) {
+      this.setState({ name: newProps.drug.drugGroup.name });
+    }
+  }
+
   renderItems() {
     let items = this.props.drug.drugGroup.conceptGroup[1].conceptProperties;
 

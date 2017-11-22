@@ -21,13 +21,18 @@
       margin-bottom: 20px;
 
       .result-title {
+        background-color: white;
+        z-index: 100;
+        width: 90%;
+        position: fixed;
         font-family: $sans;
         font-size: 30px;
         color: $light-black;
-        margin: 30px 0 50px 50px;
+        padding: 30px 0 50px 50px;
       }
 
       .result-list-items {
+        margin-top: 122px;
         text-align: center;
 
         .result-list-item {

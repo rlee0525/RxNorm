@@ -21,7 +21,11 @@ class SearchBar extends React.Component {
     e.preventDefault();
     let { medication } = this.state;
     this.props.searchDrug(medication).then(
-      () => this.props.history.push('result')
+      () => {
+        if (this.props.history.location.pathname !== "/result") {
+          this.props.history.push('result');
+        }
+      }
     );
   }
 

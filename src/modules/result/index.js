@@ -3,6 +3,7 @@ import autoBind from 'auto-bind';
 import { connect } from 'react-redux';
 
 import { ResultList } from './subcomponent';
+import { searchDrug } from '../search/actions';
 import { SearchBar } from '../search/subcomponents';
 
 class Result extends React.Component {
@@ -21,8 +22,12 @@ class Result extends React.Component {
     if (!this.props.drug.drugGroup) {
       this.props.history.push("/");
     }
+  }
 
-    console.log(this.state.drug);
+  componentWillReceiveProps(newProps) {
+   if (this.props.drug.drugGroup.name !== newProps.drug.drugGroup.name) {
+     this.setState({ searchAgain: false });
+   }
   }
 
   searchAgain() {
@@ -31,9 +36,25 @@ class Result extends React.Component {
 
   renderSearchAgain() {
     if (this.state.searchAgain) {
-      return <SearchBar />;
+      return <SearchBar {...this.props} />;
     } else {
       return <span onClick={this.searchAgain}>Search Again</span>;
+    }
+  }
+
+  renderNoResult() {
+    let validResult = this.props.drug.drugGroup.conceptGroup;
+    
+    if (!validResult) {
+      return (
+        <div className="result-list">
+          <div className="result-title">
+            <span className="capitalize">No matching results.</span>
+          </div>
+        </div>
+      );
+    } else {
+      return <ResultList {...this.props} />;
     }
   }
 
@@ -41,7 +62,7 @@ class Result extends React.Component {
     return (
       <div className="results-container">
         <div className="results">
-          <ResultList {...this.props} />
+          {this.renderNoResult()}
 
           <div className="search-again">
             {this.renderSearchAgain()}
@@ -57,7 +78,7 @@ const mapStateToProps = ({ drug }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  searchDrug: query => dispatch(searchDrug(query))
 });
 
 export default connect(
