@@ -1,0 +1,35 @@
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 70px;
+
+  .navbar-left {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+    .app-name {
+      color: $light-black;
+      font-size: 26px;
+      font-family: $sans;
+      font-weight: 400;
+      padding-left: 10px;
+      padding-top: 10px;
+    }
+  }
+
+  .navbar-right {
+    padding: 15px;
+
+    .fa-github {
+      color: $light-black;
+      font-size: 30px;
+      padding-top: 4px;
+    }
+  }
+}
