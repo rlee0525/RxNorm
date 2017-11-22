@@ -19,11 +19,10 @@ class SearchBar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
     let { medication } = this.state;
-    // this.props.queryPlaces(query);
-    let { history } = this.props;
-    if (history.location.pathname !== '/result') history.push('result');
+    this.props.searchDrug(medication).then(
+      () => this.props.history.push('result')
+    );
   }
 
   render() {
@@ -37,7 +36,7 @@ class SearchBar extends React.Component {
               onChange={this.updateMedication}
               type="text"
               id="medication"
-              placeholder="Which drug?"
+              placeholder="Type the name..."
               autoFocus={true}
             />
 

@@ -33,7 +33,7 @@
   width: 400px;
   height: 40px;
   padding: 0 10px;
-  font-size: 12px;
+  font-size: 13px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   box-sizing: border-box;
   border: 0.5px solid #ddd;
@@ -41,6 +41,11 @@
   outline: none;
   background-color: white;
   text-align: left;
+  font-family: $sans;
+  text-transform: capitalize;
+}
+::-webkit-input-placeholder {
+  text-transform: none;
 }
 .medication-search {
   position: relative;

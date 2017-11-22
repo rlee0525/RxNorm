@@ -2,20 +2,11 @@ import React from 'react';
 import autoBind from 'auto-bind';
 import { connect } from 'react-redux';
 
-import { SearchBar } from './subcomponents';
 import Popular from 'modules/popular';
+import { searchDrug } from './actions';
+import { SearchBar } from './subcomponents';
 
-class Search extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      medication: ""
-    };
-
-    autoBind(this);
-  }
-  
+class Search extends React.Component {  
   render() {
     return (
       <div className="search">
@@ -30,4 +21,16 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+const mapStateToProps = ({ drug, session }) => ({
+  drug,
+  session
+});
+
+const mapDispatchToProps = dispatch => ({
+  searchDrug: medication => dispatch(searchDrug(medication))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Search);

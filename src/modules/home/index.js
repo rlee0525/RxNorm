@@ -11,7 +11,7 @@ class Home extends React.Component {
             RxNorm: Search Engine for Branded and Generic Medications
           </div>
         </div>
-        <Search />
+        <Search {...this.props} />
       </div>
     );
   }
