@@ -1,7 +1,94 @@
+.auth-modal {
+  position: fixed;
+  top: calc(50% - 190px);
+  left: calc(50% - 170px);
+  width: 340px;
+  height: 380px;
+  border: 1px solid $light-gray;
+  background-color: white;
+}
+.login-intro-text {
+  font-size: 24px;
+  padding-top: 30px;
+  color: $orange;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: $sans;
+}
 .login-form-container {
   margin: auto;
-  height: 300px;
+  height: 200px;
+}
+.login-form-box {
+  display: flex;
+  justify-content: center;
+  width: 340px;
+  height: 400px;
+  margin: auto;
+  top: 100px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+.login-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-input-field {
+  border: 1px solid $light-gray;
+  margin: 4px;
+  padding: 10px;
+  width: 260px;
+  font-family: $sans;
+  color: $light-black;
+  font-size: 15px;
+}
+::-webkit-input-placeholder {
+  color: $lighter-black;
+  font-family: $sans;
+}
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+.login-button-field {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#sign-up-log-in-button {
+  background-color: $light-blue;
+}
+.login-button-field button {
+  display: flex;
+  justify-content: center;
+  margin: 2px;
+  padding: 10px;
+  width: 260px;
+  border-radius: 0 !important;
+  background-color: $orange;
+  color: white;
+  font-family: $sans;
+}
+.login-button-field button:hover {
+  opacity: 0.8;
+}
+.check-own-account {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 7px;
+  padding: 10px 10px 20px 10px;
   width: 300px;
-  background-color: white;
-  border-radius: 4px;
+  font-size: 12px;
+  color: $light-black;
+  font-family: $sans;
+}
+#status-toggle {
+  align-self: center;
+  color: $light-blue;
 }

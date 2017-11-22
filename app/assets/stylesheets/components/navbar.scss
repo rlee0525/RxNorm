@@ -25,6 +25,19 @@
 
   .navbar-right {
     padding: 15px;
+    display: flex;
+    flex-direction: row;
+    
+    .login-button-container {
+      margin-right: 35px;
+      
+      .login-button {
+        padding-top: 6px;
+        font-family: $sans;
+        color: $light-blue;
+        font-size: 1.2em;
+      }
+    }
 
     .fa-github {
       color: $light-black;

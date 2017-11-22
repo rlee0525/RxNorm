@@ -68,9 +68,9 @@ class AuthForm extends React.Component {
   }
 
   render() {
-    let buttonText = this.state.loginPage ? "LOGIN" : "SIGNUP";
+    let buttonText = this.state.loginPage ? "Login" : "Sign Up";
     let questionText = this.state.loginPage ? "Don't have an account?" : "Already have an account?";
-    let text = this.state.loginPage ? "Sign Up" : "Login";
+    let text = this.state.loginPage ? "Register" : "Login";
 
     return (
       <div className="login-form-container">
@@ -98,7 +98,7 @@ class AuthForm extends React.Component {
 
             <div className="login-button-field">
               <button id="sign-up-log-in-button" type="submit">{buttonText}</button>
-              <button type="button" onClick={this.demoLogin}>DEMO</button>
+              <button type="button" onClick={this.demoLogin}>Demo</button>
             </div>
 
             <div className="check-own-account">

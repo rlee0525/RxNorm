@@ -1,6 +1,5 @@
 import React from 'react';
 
-import AuthForm from '../auth';
 import Search from '../search';
 
 class Home extends React.Component {
@@ -12,7 +11,6 @@ class Home extends React.Component {
             RxNorm: Search Engine for Branded and Generic Medications
           </div>
         </div>
-        <AuthForm />
         <Search />
       </div>
     );
