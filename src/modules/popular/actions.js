@@ -3,7 +3,7 @@ export const RECEIVE_DRUGS = "RECEIVE_DRUGS";
 const fetchPopularDrugs = () => (
   $.ajax({
     method: 'GET',
-    url: 'api/drugs'
+    url: 'api/search_histories'
   })
 );
 

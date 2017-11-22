@@ -18,5 +18,26 @@
 
   .popular-container {
     height: 50%;
+
+    .popular-list-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .popular-item-container {
+        flex: 1;
+        font-size: 18px;
+        font-family: $sans;
+        padding: 20px 30px;
+        border: 1px solid $orange;
+        margin: 0 20px;
+      }
+
+      .popular-item-container:hover {
+        cursor: pointer;
+        background-color: $orange;
+        color: white;
+      }
+    }
   }
 }

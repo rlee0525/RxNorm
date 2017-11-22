@@ -4,33 +4,35 @@ import { connect } from 'react-redux';
 
 import Loading from 'common/loading';
 import { getPopularDrugs } from './actions';
+import { PopularItem } from './subcomponents';
 
 class Popular extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      loading: true,
-      popular: []
+      popular: null
     };
 
     autoBind(this);
   }
 
   componentDidMount() {
-    // this.props.getPopularDrugs().then(
-    //   () => this.setState({ loading: false })
-    // );
+    this.props.getPopularDrugs().then(
+      res => this.setState({ popular: res.drugs })
+    );
   }
 
   renderPopular() {
-    if (this.state.loading) return <Loading />;
-
-    return (
-      <div>
-        hi
-      </div>
-    );
+    if (!this.state.popular) return <Loading />;
+    
+    let { popular } = this.state;
+    return popular.map((key, idx) => (
+      <PopularItem 
+        key={`popular-${key.name}-${idx}`}
+        name={key.name}
+      />
+    ));
   }
 
   render() {
@@ -39,7 +41,9 @@ class Popular extends React.Component {
         <h1>Popular Searches</h1>
 
         <div className="popular-container">
-          {this.renderPopular()}
+          <div className="popular-list-container">
+            {this.renderPopular()}
+          </div>
         </div>
       </div>
     );
