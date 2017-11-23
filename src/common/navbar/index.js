@@ -75,13 +75,15 @@ class Navbar extends React.Component {
   render() {
     return (
       <div className="navbar-container">
-        <div className="navbar-left">
-          <img 
-            className="logo"
-            src="http://res.cloudinary.com/rlee0525/image/upload/v1511309375/logo_gpnitx.png"
-          />
-          <h1 className="app-name">RxNorm</h1>
-        </div>
+        <a href="https://rxnorm2017.herokuapp.com/#/">
+          <div className="navbar-left">
+            <img 
+              className="logo"
+              src="http://res.cloudinary.com/rlee0525/image/upload/v1511309375/logo_gpnitx.png"
+            />
+            <h1 className="app-name">RxNorm</h1>
+          </div>
+        </a>
         
         {this.renderUser()}
       </div>
