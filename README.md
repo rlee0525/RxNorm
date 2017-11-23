@@ -22,4 +22,4 @@ Users can securely create accounts using BCrypt. Registration is required to kee
 
 ![RxNorm auth](./docs/images/search.png)
 
-Utilized RxNorm API to search the drug and find all related generic and branded drugs. Also top 5 popular searches are stored and displayed on the main page.
+Utilized RxNorm API to search the drug and find all related generic and branded drugs. Also top 5 popular drugs are ranked based on the number of searches performed by registered users on the backend and are displayed on the main page.
